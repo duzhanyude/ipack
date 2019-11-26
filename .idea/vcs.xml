@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/src/github.com/axgle/mahonia" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/golang/sys" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/google/gopacket" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/kr/pretty" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/github.com/kr/text" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/go.mongodb.org/mongo-driver" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/check.v1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/mgo.v2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/gopkg.in/yaml.v2" vcs="Git" />
+  </component>
+</project>
