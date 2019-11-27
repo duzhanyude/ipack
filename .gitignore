@@ -17,3 +17,4 @@ iot.iml
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
+Would skip repository src/github.com/golang/sys
