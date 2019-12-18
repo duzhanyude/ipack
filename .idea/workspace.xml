@@ -1,30 +1,929 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1b3601b3-aa8e-4869-979b-8a99689e978c" name="Default Changelist" comment="init commit add">
-      <change afterPath="$PROJECT_DIR$/src/com.capture/buffer/buffer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/conf/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/constant/sys_constant.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/dispatch/dispatch.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/filter/filter.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/init/initApp.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/log/logger.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/security/base64.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/security/des.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/security/rsa.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/service/http/httpServer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com.capture/statistic/statis.go" afterDir="false" />
+    <list default="true" id="1b3601b3-aa8e-4869-979b-8a99689e978c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/db/000006.ldb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/000029.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/CURRENT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/CURRENT.bak" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/LOCK" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/LOG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/MANIFEST-000030" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/db/leveldb/db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/dispatch/dispatch.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/message/message.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/message/registerMessage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/service/http/handler/websocketHandler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/service/http/html/index.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/service/http/html/systemInfo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/service/http/html/websocket.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/service/http/httpServer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/com.capture/statistic/statis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/8bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/ASCII.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/big5-data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/big5.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/charset.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/convert_string.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/entity.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/entity_data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/euc-jp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/fallback.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/gb18030-data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/gb18030.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/gbk-data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/gbk.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/jis0201-data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/jis0208-data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/jis0212-data.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/mbcs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/reader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/shiftjis.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/translate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/utf16.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/utf8.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/axgle/mahonia/writer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/AUTHORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/CONTRIBUTORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/decode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/decode_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/decode_amd64.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/decode_other.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/encode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/encode_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/encode_amd64.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/encode_other.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/golang/snappy/snappy.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/AUTHORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/decode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/flows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/gc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layerclass.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/arp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/asf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/asf_presencepong.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/base.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/bfd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/cdp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ctp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/dhcpv4.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/dhcpv6.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/dhcpv6_options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/dns.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/dot11.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/dot1q.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/eap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/eapol.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/endpoints.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/enums.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/enums_generated.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/etherip.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ethernet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/fddi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/gen2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/gen_linted.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/geneve.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/gre.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/gtp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/iana_ports.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/icmp4.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/icmp6.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/icmp6msg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/igmp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ip4.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ip6.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ipsec.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/layertypes.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/lcm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/linux_sll.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/llc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/lldp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/loopback.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/mldv1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/mldv2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/modbustcp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/mpls.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ndp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ntp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ospf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/pflog.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ports.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/ppp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/pppoe.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/prism.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/radiotap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/rmcp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/rudp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/sctp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/sflow.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/sip.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/stp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/tcp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/tcpip.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/test_creator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/tls.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/tls_alert.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/tls_appdata.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/tls_cipherspec.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/tls_handshake.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/udp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/udplite.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/usb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/vrrp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers/vxlan.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layers_decoder.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/layertype.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/packet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/parser.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/defs_windows_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/defs_windows_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/generate_defs.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/pcap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/pcap_tester.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/pcap_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/pcap_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/test_dns.pcap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/test_ethernet.pcap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/pcap/test_loopback.pcap" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/time.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/google/gopacket/writer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/batch.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/cache/cache.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/cache/lru.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/comparer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/comparer/bytes_comparer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/comparer/comparer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db_compaction.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db_iter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db_snapshot.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db_state.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db_transaction.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db_util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/db_write.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/errors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/errors/errors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/filter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/filter/bloom.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/filter/filter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/iterator/array_iter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/iterator/indexed_iter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/iterator/iter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/iterator/merged_iter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/journal/journal.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/key.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/memdb/memdb.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/opt/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/options.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/session.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/session_compaction.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/session_record.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/session_util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/file_storage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/file_storage_nacl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/file_storage_plan9.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/file_storage_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/file_storage_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/file_storage_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/mem_storage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/storage/storage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/table.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/table/reader.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/table/table.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/table/writer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/util/buffer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/util/buffer_pool.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/util/crc32.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/util/hash.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/util/range.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/util/util.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/github.com/syndtr/goleveldb/leveldb/version.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/net/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/net/PATENTS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/net/websocket/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/net/websocket/dial.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/net/websocket/hybi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/net/websocket/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/net/websocket/websocket.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/PATENTS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/aliases.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/dll_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/env_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/eventlog.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/exec_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/memory_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/mkerrors.bash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/mkknownfolderids.bash" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/mksyscall.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/race.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/race0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/security_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/str.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/syscall.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/syscall_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/types_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/types_windows_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/types_windows_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/types_windows_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/zerrors_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/zknownfolderids_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/golang.org/x/sys/windows/zsyscall_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/capture/vendor/vendor.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/github.com/golang/snappy" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/github.com/kardianos/govendor" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/github.com/onsi/ginkgo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/github.com/onsi/gomega" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/github.com/syndtr/goleveldb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/AUTHORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/CONTRIBUTORS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/PATENTS" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/asm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/constants.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/instructions.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/instructions_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/setter.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/testdata/all_instructions.bpf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/testdata/all_instructions.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_aluop_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_bpf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_extension_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_instructions.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_jump_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_load_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_ret_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_scratch_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/bpf/vm_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/codereview.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/context.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/context_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/ctxhttp/ctxhttp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/ctxhttp/ctxhttp_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/go17.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/go19.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/pre_go17.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/pre_go19.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/context/withtimeout_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/dict/dict.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/dns/dnsmessage/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/dns/dnsmessage/message.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/dns/dnsmessage/message_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/atom/atom.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/atom/atom_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/atom/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/atom/table.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/atom/table_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/charset.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/charset_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/HTTP-charset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/HTTP-vs-UTF-8-BOM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/HTTP-vs-meta-charset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/HTTP-vs-meta-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/No-encoding-declaration.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/UTF-16BE-BOM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/UTF-16LE-BOM.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/UTF-8-BOM-vs-meta-charset.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/UTF-8-BOM-vs-meta-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/meta-charset-attribute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/charset/testdata/meta-content-attribute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/const.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/doctype.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/entity.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/entity_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/escape.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/escape_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/foreign.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/node.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/node_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/parse.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/parse_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/render.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/render_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/go/issue_30600_parse_panics_in_cell_mode.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/go/issue_30961_error_nested_unknown_tag_types.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/go/select.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/go/template.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/go1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/adoption01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/adoption02.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/blocks.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/comments01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/doctype01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/domjs-unsafe.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/entities01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/entities02.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/foreign-fragment.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/html5test-com.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/inbody01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/isindex.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/main-element.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/math.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/namespace-sensitivity.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/pending-spec-changes-plain-text-unsafe.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/pending-spec-changes.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/plain-text-unsafe.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/ruby.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/scriptdata01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/scripted/adoption01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/scripted/ark.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/scripted/webkit01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tables01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/template.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests1.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests10.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests11.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests12.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests14.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests15.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests16.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests17.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests18.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests19.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests2.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests20.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests21.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests22.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests23.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests24.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests25.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests26.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests3.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests4.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests5.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests6.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests7.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests8.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests9.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tests_innerHTML_1.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/tricky01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/webkit01.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/testdata/webkit/webkit02.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/token.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/html/token_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http/httpguts/guts.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http/httpguts/httplex.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http/httpguts/httplex_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http/httpproxy/export_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http/httpproxy/go19_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http/httpproxy/proxy.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http/httpproxy/proxy_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/ciphers.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/ciphers_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/client_conn_pool.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/databuffer.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/databuffer_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/errors.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/errors_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/flow.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/flow_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/frame.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/frame_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/go111.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/gotrack.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/gotrack_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2c/h2c.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2c/h2c_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/deployment-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/go.mod" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/go.sum" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/h2demo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/rootCA.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/rootCA.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/rootCA.srl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/server.crt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/server.key" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/service.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2demo/tmpl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2i/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/h2i/h2i.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/headermap.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/encode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/encode_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/hpack.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/hpack_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/huffman.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/hpack/tables_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/http2.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/http2_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/not_go111.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/pipe.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/pipe_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/server_push_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/server_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/testdata/draft-ietf-httpbis-http2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/transport.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/transport_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/write.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/writesched.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/writesched_priority.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/writesched_priority_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/writesched_random.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/writesched_random_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/writesched_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/http2/z_spec_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/diag_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/dstunreach.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/echo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/endpoint.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/extension.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/extension_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/helper_posix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/interface.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/ipv4.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/ipv4_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/ipv6.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/listen_posix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/listen_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/message.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/message_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/messagebody.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/mpls.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/multipart.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/multipart_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/packettoobig.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/paramprob.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/sys_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/icmp/timeexceeded.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/idna10.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/idna9.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/idna_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/punycode.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/punycode_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/tables10.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/tables11.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/tables12.00.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/tables9.0.0.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/trie.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/idna/trieval.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/iana/const.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/iana/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/cmsghdr.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/cmsghdr_bsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/cmsghdr_linux_32bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/cmsghdr_linux_64bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/cmsghdr_solaris_64bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/cmsghdr_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_aix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/defs_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/empty.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/error_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/error_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/iovec_32bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/iovec_64bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/iovec_solaris_64bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/iovec_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/mmsghdr_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/mmsghdr_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_bsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_bsdvar.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_linux_32bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_linux_64bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_solaris_64bit.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/msghdr_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/norace.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/race.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/rawconn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/rawconn_mmsg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/rawconn_msg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/rawconn_nommsg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/rawconn_nomsg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/socket.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/socket_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_bsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_bsdvar.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_const_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_go1_11_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linkname.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_386.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_mips.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_mips64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_mips64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_mipsle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_ppc64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_ppc64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_riscv64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_s390x.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_linux_s390x.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_posix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_solaris_amd64.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/sys_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_aix_ppc64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_darwin_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_darwin_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_darwin_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_darwin_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_dragonfly_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_freebsd_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_freebsd_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_freebsd_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_freebsd_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_mips.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_mips64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_mips64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_mipsle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_ppc64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_ppc64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_riscv64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_linux_s390x.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_netbsd_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_netbsd_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_netbsd_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_netbsd_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_openbsd_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_openbsd_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_openbsd_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_openbsd_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socket/zsys_solaris_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socks/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socks/dial_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/socks/socks.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/sockstest/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/sockstest/server_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/timeseries/timeseries.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/internal/timeseries/timeseries_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/batch.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/bpf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/control.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/control_bsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/control_pktinfo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/control_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/control_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/control_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/control_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_aix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/defs_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/dgramopt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/endpoint.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/genericopt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/header.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/header_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/helper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/helper_posix_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/helper_stub_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/iana.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/icmp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/icmp_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/icmp_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/icmp_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/multicast_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/multicastlistener_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/multicastsockopt_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/packet.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/payload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/payload_cmsg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/payload_nocmsg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/readwrite_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sockopt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sockopt_posix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sockopt_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_aix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_asmreq.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_asmreq_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_asmreqn.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_asmreqn_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_bpf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_bpf_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_bsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_ssmreq.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_ssmreq_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/sys_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/unicast_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/unicastsockopt_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_aix_ppc64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_freebsd_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_freebsd_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_freebsd_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_freebsd_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_mips.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_mips64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_mips64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_mipsle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_ppc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_ppc64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_ppc64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_riscv64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_linux_s390x.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv4/zsys_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/batch.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/bpf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/control.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/control_rfc2292_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/control_rfc3542_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/control_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/control_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/control_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/control_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_aix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/defs_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/dgramopt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/doc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/endpoint.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/genericopt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/header.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/header_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/helper.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/helper_posix_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/helper_stub_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/helper_unix_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/helper_windows_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/iana.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/icmp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/icmp_bsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/icmp_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/icmp_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/icmp_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/icmp_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/icmp_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/mocktransponder_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/multicast_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/multicastlistener_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/multicastsockopt_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/payload.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/payload_cmsg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/payload_nocmsg.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/readwrite_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sockopt.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sockopt_posix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sockopt_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sockopt_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_aix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_asmreq.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_asmreq_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_bpf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_bpf_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_bsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_linux.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_ssmreq.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_ssmreq_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/sys_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/unicast_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/unicastsockopt_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_aix_ppc64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_freebsd_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_freebsd_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_freebsd_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_freebsd_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_mips.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_mips64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_mips64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_mipsle.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_ppc.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_ppc64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_ppc64le.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_riscv64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_linux_s390x.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/ipv6/zsys_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/address.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/address_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/binary.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/defs_solaris.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/lif.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/link.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/link_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/sys.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/sys_solaris_amd64.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/syscall.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/lif/zsys_solaris_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/nettest/conntest.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/nettest/conntest_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/nettest/nettest.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/nettest/nettest_stub.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/nettest/nettest_unix.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/nettest/nettest_windows.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/netutil/helper_stub_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/netutil/helper_unix_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/netutil/helper_windows_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/netutil/listen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/netutil/listen_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/dial.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/dial_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/direct.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/per_host.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/per_host_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/proxy.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/proxy_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/proxy/socks5.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/publicsuffix/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/publicsuffix/gen.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/publicsuffix/list.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/publicsuffix/list_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/publicsuffix/table.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/publicsuffix/table_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/address.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/address_darwin_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/address_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/binary.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/defs_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/defs_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/defs_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/defs_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/defs_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/empty.s" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/interface.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/interface_announce.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/interface_classic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/interface_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/interface_multicast.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/interface_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/message.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/message_darwin_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/message_freebsd_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/message_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/route.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/route_classic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/route_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/route_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/sys.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/sys_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/sys_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/sys_freebsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/sys_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/sys_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/syscall.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/syscall_go1_11_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/syscall_go1_12_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_darwin.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_dragonfly.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_freebsd_386.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_freebsd_amd64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_freebsd_arm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_freebsd_arm64.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_netbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/route/zsys_openbsd.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/trace/events.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/trace/histogram.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/trace/histogram_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/trace/trace.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/trace/trace_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/file.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/file_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/if.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/if_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/README" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/atom_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/example_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/marshal.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/marshal_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/read.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/read_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/typeinfo.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/xml.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/internal/xml/xml_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/litmus_test_server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/lock.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/lock_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/prop.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/prop_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/webdav.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/webdav_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/xml.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/webdav/xml_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/client.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/dial.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/dial_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/exampledial_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/examplehandler_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/hybi.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/hybi_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/server.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/websocket.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/websocket/websocket_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/xsrftoken/xsrf.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/golang.org/x/net/xsrftoken/xsrf_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statLog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/go_build_main_go.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/go_build_main_go.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/mongodb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/cryp/base64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/cryp/des.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/cryp/rsa.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/httpServer/httpServer.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/com.capture/message/http/httpMessage.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/packHandler/pHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/com.capture/package/pHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/tcpServer/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/com.capture/message/message.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/tcpServer/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/com.capture/service/socket/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/go_build_main_go.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/go_build_test_go.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/buffer/buffer.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/buffer/buffer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/conf/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/conf/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/constant/sys_constant.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/constant/sys_constant.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/dispatch/dispatch.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/filter/filter.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/filter/filter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/init/initApp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/init/initApp.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/log/logger.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/log/logger.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/message/http/httpMessage.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/message/http/httpMessage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/message/message.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/package/pHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/package/pHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/security/base64.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/security/base64.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/security/des.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/security/des.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/security/rsa.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/security/rsa.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/service/http/httpServer.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/service/socket/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/com.capture/service/socket/server.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.capture/statistic/statis.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/capture/main/main.go" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,70 +938,49 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/service/http/httpServer.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/httpServer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
-              <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
+            <state relative-caret-position="1150">
+              <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
               <folding>
-                <element signature="e#14#50#0" expanded="true" />
+                <element signature="e#14#250#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/init/initApp.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/html/websocket.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-              <folding>
-                <element signature="e#14#152#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="253">
+              <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/dispatch/dispatch.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/statistic/statis.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/socket/server.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="46">
-              <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/message/message.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/package/pHandler.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+            <state relative-caret-position="90">
+              <caret line="207" column="5" selection-start-line="207" selection-start-column="5" selection-end-line="207" selection-end-column="5" />
               <folding>
-                <element signature="e#17#107#0" expanded="true" />
+                <element signature="e#21#227#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/security/base64.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/security/base64.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
               <caret line="11" selection-start-line="11" selection-end-line="11" />
@@ -111,37 +989,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/security/des.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/message/registerMessage.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
+            <state relative-caret-position="345">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/buffer/buffer.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/handler/websocketHandler.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="644">
+              <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
               <folding>
-                <element signature="e#17#67#0" expanded="true" />
+                <element signature="e#17#94#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com.capture/security/rsa.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/message/message.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
-              <folding>
-                <element signature="e#17#93#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1495">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main.go">
+        <entry file="file://$PROJECT_DIR$/src/capture/com.capture/message/http/httpMessage.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-              <folding>
-                <element signature="e#14#54#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="322">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -164,6 +1054,7 @@
       <find>log</find>
       <find>address</find>
       <find>fmt</find>
+      <find>writeFile</find>
     </findStrings>
     <replaceStrings>
       <replace>log</replace>
@@ -179,6 +1070,7 @@
       </map>
     </option>
     <option name="RESET_MODE" value="MIXED" />
+    <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
   <component name="GoLibraries">
     <option name="urls">
@@ -191,17 +1083,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/db/mongodb.go" />
-        <option value="$PROJECT_DIR$/src/github.com/google/gopacket/packet.go" />
-        <option value="$PROJECT_DIR$/src/des.go" />
-        <option value="$PROJECT_DIR$/src/rsa.go" />
-        <option value="$PROJECT_DIR$/src/cryp/rsa.go" />
-        <option value="$PROJECT_DIR$/src/http/httpServer.go" />
-        <option value="$PROJECT_DIR$/src/httpServer/httpServer.go" />
-        <option value="$PROJECT_DIR$/src/tcpServer/Client.go" />
-        <option value="$PROJECT_DIR$/src/tcpServer/server.go" />
-        <option value="$PROJECT_DIR$/src/tcpServer/client.go" />
-        <option value="$PROJECT_DIR$/src/packHandler/pHandler.go" />
         <option value="$PROJECT_DIR$/src/cryp/des.go" />
         <option value="$PROJECT_DIR$/src/cryp/base64.go" />
         <option value="$PROJECT_DIR$/src/other/cryp/des.go" />
@@ -217,30 +1098,56 @@
         <option value="$PROJECT_DIR$/src/com.capture/log/log.go" />
         <option value="$PROJECT_DIR$/src/com.capture/log/logger.go" />
         <option value="$PROJECT_DIR$/src/com.capture/filter/packFilter.go" />
-        <option value="$PROJECT_DIR$/src/com.capture/conf/config.go" />
         <option value="$PROJECT_DIR$/src/com.capture/message/socket/client.go" />
         <option value="$PROJECT_DIR$/src/com.capture/message/client.go" />
         <option value="$PROJECT_DIR$/src/com.capture/service/socket/server.go" />
         <option value="$PROJECT_DIR$/src/com.capture/filter/contentFilter.go" />
         <option value="$PROJECT_DIR$/src/com.capture/filter/filter.go" />
-        <option value="$PROJECT_DIR$/src/com.capture/init/initApp.go" />
-        <option value="$PROJECT_DIR$/src/com.capture/buffer/buffer.go" />
-        <option value="$PROJECT_DIR$/src/com.capture/statistic/statis.go" />
-        <option value="$PROJECT_DIR$/src/com.capture/package/pHandler.go" />
-        <option value="$PROJECT_DIR$/src/com.capture/service/http/httpServer.go" />
-        <option value="$PROJECT_DIR$/src/com.capture/dispatch/dispatch.go" />
         <option value="$PROJECT_DIR$/src/main.go" />
         <option value="$PROJECT_DIR$/src/com.capture/security/base64.go" />
         <option value="$PROJECT_DIR$/src/com.capture/security/des.go" />
         <option value="$PROJECT_DIR$/src/com.capture/security/rsa.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/message/registerMessage.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/db/leveldb/db.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/message/http/httpMessage.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/conf/config.go" />
         <option value="$PROJECT_DIR$/src/com.capture/message/message.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/init/initApp.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/buffer/buffer.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/service/http/httpServer.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/service/http/html/systemInfo.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/service/http/html/websocket.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/statistic/statis.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/dispatch/dispatch.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/package/pHandler.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/service/http/html/index.go" />
+        <option value="$PROJECT_DIR$/src/com.capture/service/http/handler/websocketHandler.go" />
+        <option value="$PROJECT_DIR$/src/capture/main.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/service/http/html/index.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/service/http/handler/websocketHandler.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/message/registerMessage.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/init/initApp.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/buffer/buffer.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/dispatch/dispatch.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/service/http/httpServer.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/conf/config.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/service/socket/server.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/message/message.go" />
+        <option value="$PROJECT_DIR$/src/capture/com.capture/package/pHandler.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1456" />
-    <option name="height" value="867" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -254,24 +1161,6 @@
             <path>
               <item name="iot" type="b2602c69:ProjectViewProjectNode" />
               <item name="iot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com.capture" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="iot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="iot" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="com.capture" type="462c0819:PsiDirectoryNode" />
-              <item name="security" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="iot" type="b2602c69:ProjectViewProjectNode" />
@@ -349,26 +1238,28 @@
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.vendoring.notification.had.been.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com.capture/package" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoProjectSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="go.sdk" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\bs\iot\src\com.capture\message" />
-      <recent name="D:\bs\iot\src\other" />
-      <recent name="D:\bs\iot\src\cryp" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\bs\iot\src\golang.org\x" />
+      <recent name="D:\bs\iot\src\golang.org" />
       <recent name="D:\bs\iot\src\com.capture\package" />
       <recent name="D:\bs\iot\src\com.capture\service\socket" />
       <recent name="D:\bs\iot\src\com.capture\service\http" />
-      <recent name="D:\bs\iot\src\com.capture\message\http" />
-      <recent name="D:\bs\iot\src\com.capture\message\socket" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bs\iot\src\capture\main" />
+      <recent name="D:\bs\iot\src\capture" />
+      <recent name="D:\bs\iot\src\com.capture\message" />
+      <recent name="D:\bs\iot\src\other" />
+      <recent name="D:\bs\iot\src\cryp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -383,7 +1274,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build main.go">
+  <component name="RunManager">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="iot" />
       <working_directory value="$PROJECT_DIR$" />
@@ -391,32 +1282,12 @@
       <kind value="FILE" />
       <method v="2" />
     </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build  main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="iot" />
       <working_directory value="$PROJECT_DIR$" />
+      <parameters value="-pfilter &quot;&quot; " />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/src/main.go" />
-      <directory value="$PROJECT_DIR$" />
-      <output_directory value="D:\bs\iot\bin" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build test1.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="iot" />
-      <working_directory value="$PROJECT_DIR$" />
-      <envs>
-        <env name="CC" value="D:\mingw32\bin\gcc.exe" />
-      </envs>
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/src/test1.go" />
-      <output_directory value="D:\bs\iot\bin" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build test.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="iot" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/src/test.go" />
-      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/src/capture/main/main.go" />
       <output_directory value="D:\bs\iot\bin" />
       <method v="2" />
     </configuration>
@@ -428,18 +1299,9 @@
       <kind value="DIRECTORY" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Build.go build test.go" />
-      <item itemvalue="Go Build.go build test1.go" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build test1.go" />
-        <item itemvalue="Go Build.go build test.go" />
-        <item itemvalue="Go Build.go build test.go" />
-        <item itemvalue="Go Build.go build main.go" />
+        <item itemvalue="Go Build.go build  main.go" />
       </list>
     </recent_temporary>
   </component>
@@ -482,7 +1344,22 @@
       <workItem from="1574762628532" duration="10223000" />
       <workItem from="1574839190620" duration="326000" />
       <workItem from="1574840364538" duration="15615000" />
-      <workItem from="1574921879579" duration="11293000" />
+      <workItem from="1574921879579" duration="28875000" />
+      <workItem from="1575256033178" duration="1337000" />
+      <workItem from="1575431881832" duration="4216000" />
+      <workItem from="1576033587654" duration="2630000" />
+      <workItem from="1576049194076" duration="8916000" />
+      <workItem from="1576059625450" duration="645000" />
+      <workItem from="1576060295201" duration="5701000" />
+      <workItem from="1576133842119" duration="625000" />
+      <workItem from="1576219461958" duration="5824000" />
+      <workItem from="1576227452429" duration="1700000" />
+      <workItem from="1576303352345" duration="5002000" />
+      <workItem from="1576310879312" duration="5916000" />
+      <workItem from="1576471619817" duration="6190000" />
+      <workItem from="1576481883240" duration="4811000" />
+      <workItem from="1576569500148" duration="23000" />
+      <workItem from="1576630903510" duration="279000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1574816773107</created>
@@ -505,11 +1382,25 @@
       <option name="project" value="LOCAL" />
       <updated>1574817866646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="init commit add">
+      <created>1574933311226</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1574933311226</updated>
+    </task>
+    <task id="LOCAL-00005" summary="init commit add">
+      <created>1574933444806</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1574933444806</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161176000" />
+    <option name="totallyTimeSpent" value="232573000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -521,32 +1412,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21848138" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2277937" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3490566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49713466" weight="0.35040432" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49641833" visible="true" weight="0.56738544" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39892185" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32884097" />
-      <window_info anchor="bottom" id="Docker" order="7" weight="0.32884097" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49856734" visible="true" weight="0.3625337" />
+      <window_info anchor="bottom" id="Docker" order="7" weight="0.56738544" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49856734" weight="0.42318058" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928367" weight="0.41374663" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5028653" side_tool="true" weight="0.36657682" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928367" weight="0.26954177" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50358164" side_tool="true" weight="0.40700808" />
       <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="RestServices" order="4" />
-      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Maven" order="5" weight="0.3295129" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="SciView" order="8" />
@@ -617,129 +1508,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="init commit add" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Go/src/crypto/cipher/cipher.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/other/cryp/rsa.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="e#14#90#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/db/mongodb.go" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="46">
-            <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/other/cryp/base64.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/other/httpServer/httpServer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/builtin/builtin.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1886">
-          <caret line="82" column="5" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/syscall/syscall_windows.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2599">
-          <caret line="248" column="23" lean-forward="true" selection-start-line="248" selection-start-column="23" selection-end-line="248" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/syscall/exec_linux.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3312" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/syscall/exec_linux_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Go/src/syscall/syscall_linux.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="376" column="5" lean-forward="true" selection-start-line="376" selection-start-column="5" selection-end-line="376" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/pcap/gopacket_benchmark/benchmark.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="60" column="31" lean-forward="true" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/pcap/pcap_tester.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/pcap/pcap_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5888">
-          <caret line="266" column="22" selection-start-line="266" selection-start-column="22" selection-end-line="266" selection-end-column="22" />
-          <folding>
-            <element signature="e#208#336#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/pcap/pcapgo_test.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/pcap/pcap_unix.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="169" column="10" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="10" />
-          <folding>
-            <element signature="e#293#4974#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test1.go" />
     <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/layers/enums.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -779,13 +1547,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com.capture/test.go" />
-    <entry file="file://$PROJECT_DIR$/src/com.capture/constant/sys_constant.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Go/src/flag/flag.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -793,7 +1554,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/log/logger.go">
+    <entry file="file://$PROJECT_DIR$/src/com.capture/filter/packFilter.go" />
+    <entry file="file://$PROJECT_DIR$/src/com.capture/message/client.go" />
+    <entry file="file://$PROJECT_DIR$/src/other/tcpServer/server.go" />
+    <entry file="file://$PROJECT_DIR$/src/com.capture/filter/contentFilter.go" />
+    <entry file="file://$PROJECT_DIR$/src/other/tcpServer/client.go" />
+    <entry file="file://$PROJECT_DIR$/src/other/packHandler/pHandler.go" />
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/security/des.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="94" column="2" selection-start-line="94" selection-start-column="2" selection-end-line="94" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/reflect/type.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="981" selection-start-line="981" selection-end-line="981" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/packet.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="98" column="30" selection-start-line="98" selection-start-column="30" selection-end-line="98" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/golang.org/net/bpf/vm.go" />
+    <entry file="file://$PROJECT_DIR$/src/golang.org/x/net/bpf/vm.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/Go/src/strings/strings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17664">
+          <caret line="772" column="5" selection-start-line="772" selection-start-column="5" selection-end-line="772" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/github.com/syndtr/goleveldb/leveldb/db_write.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="370" column="64" selection-start-line="370" selection-start-column="59" selection-end-line="370" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/000001.log" />
+    <entry file="file://$PROJECT_DIR$/src/github.com/syndtr/goleveldb/leveldb/db_state.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5083">
+          <caret line="229" column="26" selection-start-line="229" selection-start-column="26" selection-end-line="229" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/sync/atomic/doc.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2645">
+          <caret line="117" column="5" selection-start-line="117" selection-start-column="5" selection-end-line="117" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/builtin/builtin.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="188" column="43" lean-forward="true" selection-start-line="188" selection-start-column="43" selection-end-line="188" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/runtime/debug.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/net/http/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40112">
+          <caret line="1768" selection-start-line="1768" selection-end-line="1768" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/container/list/list.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1495">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vendor/vendor.json" />
+    <entry file="file://$PROJECT_DIR$/src/test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/log/logger.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
           <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
@@ -803,184 +1660,167 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/github.com/google/gopacket/packet.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/security/rsa.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="857" column="44" selection-start-line="857" selection-start-column="38" selection-end-line="857" selection-end-column="44" />
+        <state relative-caret-position="1202">
+          <caret line="111" column="1" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/filter/packFilter.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/html/index.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="1495">
+          <caret line="69" column="18" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/conf/config.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/html/systemInfo.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="29" column="14" selection-start-line="29" selection-start-column="14" selection-end-line="29" selection-end-column="14" />
+        <state relative-caret-position="2047">
+          <caret line="89" column="19" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
+          <folding>
+            <element signature="e#14#94#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/message/client.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/init/initApp.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="1104">
+          <caret line="59" column="6" selection-start-line="59" selection-start-column="6" selection-end-line="59" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/message/http/httpMessage.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/dispatch/dispatch.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        <state relative-caret-position="414">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/other/tcpServer/server.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/filter/filter.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="26" column="14" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        <state relative-caret-position="298">
+          <caret line="14" column="45" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/service/socket/server.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/main/main.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <caret line="10" column="13" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="e#14#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/filter/contentFilter.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/statistic/statis.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="e#19#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/db/leveldb/db.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="8" column="12" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/constant/sys_constant.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" selection-start-line="4" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/filter/filter.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/conf/config.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="-171">
+          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/buffer/buffer.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/httpServer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="1150">
+          <caret line="61" column="1" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
           <folding>
-            <element signature="e#16#41#0" expanded="true" />
+            <element signature="e#14#250#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/other/tcpServer/client.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/html/websocket.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
+        <state relative-caret-position="253">
+          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/other/packHandler/pHandler.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="146" selection-start-line="146" selection-end-line="146" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/package/pHandler.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1052">
-          <caret line="190" column="50" selection-start-line="190" selection-start-column="50" selection-end-line="190" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/init/initApp.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
-          <folding>
-            <element signature="e#14#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/statistic/statis.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/socket/server.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
-          <caret line="2" column="32" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/service/http/httpServer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding>
-            <element signature="e#14#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/dispatch/dispatch.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="e#14#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/security/base64.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/security/base64.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/security/des.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/message/registerMessage.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="90" column="2" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
+        <state relative-caret-position="345">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/buffer/buffer.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/service/http/handler/websocketHandler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding>
-            <element signature="e#17#67#0" expanded="true" />
+            <element signature="e#17#94#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/security/rsa.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/message/message.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
-          <folding>
-            <element signature="e#17#93#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1495">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com.capture/message/message.go">
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/message/http/httpMessage.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="40" column="28" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="322">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/capture/com.capture/package/pHandler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="207" column="5" selection-start-line="207" selection-start-column="5" selection-end-line="207" selection-end-column="5" />
           <folding>
-            <element signature="e#17#107#0" expanded="true" />
+            <element signature="e#21#227#0" expanded="true" />
           </folding>
         </state>
       </provider>
