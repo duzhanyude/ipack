@@ -72,7 +72,7 @@ func (p *Pack) InitCapture() {
 				continue
 			} else {
 				ip[d.Name] = 1
-				go p.startCapture(d.Name)
+				go p.startCapture(d)
 			}
 		}
 		//fmt.Println("- Subnet mask: ", address.Netmask)
@@ -82,14 +82,14 @@ func (p *Pack) InitCapture() {
 }
 
 //抓取数据包
-func (p *Pack) startCapture(name string) {
+func (p *Pack) startCapture(d pcap.Interface) {
 
 	log.Println("packet start...")
-	deviceName := name
+	deviceName := d.Name
 	snapLen := int32(65535)
 	//por := uint16(p.Port)
 	//filter := getFilter(por)
-	log.Printf("device:%v, snapLen:%v, filter:%v\n", deviceName, snapLen, p.PackageFilter)
+	log.Printf("device:%v, snapLen:%v, filter:%v\n", d.Description, snapLen, p.PackageFilter)
 	//log.Println("filter:", filter)
 
 	//打开网络接口，抓取在线数据
@@ -163,6 +163,12 @@ func (p *Pack) doHandlerPacket(packetSource *gopacket.PacketSource) {
 			define.SrcPort = tcp.SrcPort.String()
 			define.DesPort = tcp.DstPort.String()
 			define.PayLoad = tcp.Payload[:]
+			if define.DesPort == "9091" {
+				continue
+			}
+			if define.SrcPort == "9091" {
+				continue
+			}
 		}
 
 		go dispatch.Dis.HandlerPackage(define)
