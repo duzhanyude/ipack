@@ -1,5 +1,9 @@
 package message
 
+import (
+	"capture/com.capture/constant"
+)
+
 var mes = *new([]Message)
 
 type RegisterMessage struct {
@@ -8,11 +12,11 @@ type RegisterMessage struct {
 func (r *RegisterMessage) Register(message Message) {
 	mes = append(mes, message)
 }
-func (r *RegisterMessage) SendMessage(payload interface{}) {
+func (r *RegisterMessage) SendMessage(packDefine constant.PackDefine) {
 
 	if len(mes) > 0 {
 		for _, m := range mes {
-			m.Send(payload)
+			m.Send(packDefine)
 		}
 	}
 }

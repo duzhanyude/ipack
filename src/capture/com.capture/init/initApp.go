@@ -8,7 +8,7 @@ import (
 	"capture/com.capture/filter"
 	"capture/com.capture/log"
 	"capture/com.capture/message"
-	packHandler "capture/com.capture/package"
+	"capture/com.capture/pack"
 	"capture/com.capture/service/http"
 	"fmt"
 )
@@ -40,14 +40,11 @@ func init() {
 	dis := dispatch.Dispatch{config, resgiterM, f, *conf.ContentLogFile}
 
 	go dis.WriteFile()
-
 	server := http.HttpServer{*conf.WebPort}
 	go server.StartHttp()
 
-	s := packHandler.Pack{*conf.PackageFilter, dis}
-
+	s := pack.Pack{*conf.PackageFilter}
 	go s.InitCapture()
-
 	bannar()
 }
 

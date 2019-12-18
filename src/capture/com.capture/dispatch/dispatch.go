@@ -3,11 +3,10 @@ package dispatch
 import (
 	"capture/com.capture/buffer"
 	"capture/com.capture/conf"
+	"capture/com.capture/constant"
 	"capture/com.capture/filter"
 	"capture/com.capture/message"
 	"capture/com.capture/statistic"
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
 	"os"
 	"sync"
 	"time"
@@ -23,23 +22,20 @@ type Dispatch struct {
 	ContentLog string
 }
 
-var D Dispatch
+var Dis Dispatch
 
-func (d *Dispatch) HandlerPackage(packet gopacket.Packet) {
+func (d *Dispatch) HandlerPackage(packDefine constant.PackDefine) {
 	//fmt.Println(packet)
 
-	ip := packet.Layer(layers.LayerTypeIPv4).(*layers.IPv4)
-	tcp := packet.TransportLayer().(*layers.TCP)
-
-	content := string(tcp.Payload[:])
+	content := string(packDefine.PayLoad)
 
 	//过滤内容
 	if !d.Filter.Handler(content) {
 		return
 	}
-	go d.Message.SendMessage(packet)
-	go saveIPInfo(ip.SrcIP.String()+":"+tcp.SrcPort.String(), content)
-	go d.statIP(packet)
+	go d.Message.SendMessage(packDefine)
+	go saveIPInfo(packDefine.SrcIp+":"+packDefine.SrcPort, content)
+	go d.statIP(packDefine)
 	//打印日志
 	//log.Printf("%s:%s send => %s:%s payload:  %s \n", ip.SrcIP, tcp.SrcPort, ip.DstIP, tcp.DstPort, content)
 	statistic.ReceivePackageNum++
@@ -61,8 +57,8 @@ func saveIPInfo(ip string, content string) {
 	mutex.Unlock()
 	//}
 }
-
 func (d *Dispatch) WriteFile() {
+	Dis = *d
 	for {
 		if buffer.PackageList.Len() > 0 {
 			fileObj, _ := os.OpenFile(d.ContentLog, os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0644)
@@ -81,14 +77,14 @@ func (d *Dispatch) WriteFile() {
 	}
 
 }
-func (d *Dispatch) statIP(packet gopacket.Packet) {
-	ip := packet.Layer(layers.LayerTypeIPv4).(*layers.IPv4)
-	statistic.PIP.Store(ip.SrcIP.String(), 1)
-	statistic.PIP.Store(ip.DstIP.String(), 1)
-	v, b := statistic.FromToIP.Load(ip.SrcIP.String() + "-" + ip.DstIP.String())
+func (d *Dispatch) statIP(packDefine constant.PackDefine) {
+
+	statistic.PIP.Store(packDefine.SrcIp, 1)
+	statistic.PIP.Store(packDefine.DesIp, 1)
+	v, b := statistic.FromToIP.Load(packDefine.SrcIp + "-" + packDefine.DesIp)
 	if b {
-		statistic.FromToIP.Store(ip.SrcIP.String()+"-"+ip.DstIP.String(), v.(int)+1)
+		statistic.FromToIP.Store(packDefine.SrcIp+"-"+packDefine.DesIp, v.(int)+1)
 	} else {
-		statistic.FromToIP.Store(ip.SrcIP.String()+"-"+ip.DstIP.String(), 1)
+		statistic.FromToIP.Store(packDefine.SrcIp+"-"+packDefine.DesIp, 1)
 	}
 }

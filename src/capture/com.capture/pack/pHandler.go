@@ -1,6 +1,7 @@
-package packHandler
+package pack
 
 import (
+	"capture/com.capture/constant"
 	"capture/com.capture/dispatch"
 	"capture/com.capture/statistic"
 	"fmt"
@@ -14,7 +15,6 @@ import (
 
 type Pack struct {
 	PackageFilter string
-	Disp          dispatch.Dispatch
 }
 
 //获取网卡信息
@@ -115,7 +115,16 @@ func (p *Pack) startCapture(name string) {
 			time.Sleep(1*time.Second)
 		}
 
-	}()*/
+		/*if packet.NetworkLayer() == nil || packet.TransportLayer() == nil || packet.TransportLayer().LayerType() != layers.LayerTypeTCP {
+		  	log.Println("unexpected packet")
+		  	continue
+		  }
+		  if packet.Layer(layers.LayerTypeIPv4) == nil {
+
+		  	log.Println("ip4 unexpected packet")
+		  	continue
+		  fmt.Println(packet.NetworkLayer().LayerType())
+		  }*/
 	p.doHandlerPacket(packetSource)
 }
 
@@ -127,16 +136,38 @@ func (p *Pack) doHandlerPacket(packetSource *gopacket.PacketSource) {
 		}
 	}()
 	for packet := range packetSource.Packets() {
-		if packet.NetworkLayer() == nil || packet.TransportLayer() == nil || packet.TransportLayer().LayerType() != layers.LayerTypeTCP {
+		if packet == nil || packet.NetworkLayer() == nil || packet.TransportLayer() == nil {
 			log.Println("unexpected packet")
 			continue
 		}
-		if packet.Layer(layers.LayerTypeIPv4) == nil {
-
-			log.Println("ip4 unexpected packet")
+		if packet.NetworkLayer().LayerType().String() != "IPv4" {
+			log.Println("no ipv4 packet")
 			continue
 		}
-		go p.Disp.HandlerPackage(packet)
+
+		define := constant.PackDefine{}
+		if packet.TransportLayer().LayerType() == layers.LayerTypeUDP {
+			ip := packet.Layer(layers.LayerTypeIPv4).(*layers.IPv4)
+			define.SrcIp = ip.SrcIP.String()
+			define.DesIp = ip.DstIP.String()
+			udp := packet.TransportLayer().(*layers.UDP)
+			define.SrcPort = udp.SrcPort.String()
+			define.DesPort = udp.DstPort.String()
+			define.PayLoad = udp.Payload[:]
+		} else if packet.TransportLayer().LayerType() == layers.LayerTypeTCP {
+			ip := packet.Layer(layers.LayerTypeIPv4).(*layers.IPv4)
+			define.SrcIp = ip.SrcIP.String()
+			define.DesIp = ip.DstIP.String()
+
+			tcp := packet.TransportLayer().(*layers.TCP)
+			define.SrcPort = tcp.SrcPort.String()
+			define.DesPort = tcp.DstPort.String()
+			define.PayLoad = tcp.Payload[:]
+		}
+
+		go dispatch.Dis.HandlerPackage(define)
+
+		//go dispach.HandlerPackage(define)
 	}
 
 }

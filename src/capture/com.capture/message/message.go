@@ -2,16 +2,15 @@ package message
 
 import (
 	"capture/com.capture/buffer"
+	"capture/com.capture/constant"
 	"capture/com.capture/security"
-	"github.com/google/gopacket"
-	"github.com/google/gopacket/layers"
 	"log"
 	"net"
 	"time"
 )
 
 type Message interface {
-	Send(payload interface{})
+	Send(packDefine constant.PackDefine)
 }
 
 type Client struct {
@@ -35,13 +34,10 @@ func (c *Client) ClientSocket(ip string) {
 }
 
 //发送消息
-func (c *Client) Send(payload interface{}) {
+func (c *Client) Send(packDefine constant.PackDefine) {
 
-	packet := payload.(gopacket.Packet)
-	ipL := packet.Layer(layers.LayerTypeIPv4).(*layers.IPv4)
-	ip := ipL.SrcIP.String()
-	tcp := packet.TransportLayer().(*layers.TCP)
-	buff := tcp.Payload[:]
+	ip := packDefine.SrcIp
+	buff := packDefine.PayLoad
 
 	connection := buffer.GetClient(ip)
 	if connection != nil {
@@ -70,7 +66,7 @@ type WebSocketClient struct {
 }
 
 //发送消息
-func (w *WebSocketClient) Send(payload interface{}) {
+func (w *WebSocketClient) Send(packDefine constant.PackDefine) {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Printf("recover: %v", err)
@@ -81,15 +77,12 @@ func (w *WebSocketClient) Send(payload interface{}) {
 		if value == nil {
 			return true
 		}
-		packet := payload.(gopacket.Packet)
-		ip := packet.Layer(layers.LayerTypeIPv4).(*layers.IPv4)
-		tcp := packet.TransportLayer().(*layers.TCP)
-		buff := tcp.Payload[:]
+		buff := packDefine.PayLoad
 		content := string(buff)
 		if content == "" {
 			return true
 		}
-		cont := "\r" + time.Now().Format("2006-01-02 15:04:05") + " " + ip.SrcIP.String() + ":" + tcp.SrcPort.String() + " send => " + ip.DstIP.String() + ":" + tcp.DstPort.String() + "payload:\n" + content + "\n"
+		cont := "\r" + time.Now().Format("2006-01-02 15:04:05") + " " + packDefine.SrcIp + ":" + packDefine.SrcPort + " send => " + packDefine.DesIp + ":" + packDefine.DesPort + "payload:\n" + content + "\n"
 		conn := value.(chan string)
 		conn <- cont
 		return true
