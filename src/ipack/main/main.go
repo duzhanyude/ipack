@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "capture/com.capture/init"
+	_ "ipack/com.ipack/init"
 	"sync"
 )
 

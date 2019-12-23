@@ -1,9 +1,9 @@
 package message
 
 import (
-	"capture/com.capture/buffer"
-	"capture/com.capture/constant"
-	"capture/com.capture/security"
+	"ipack/com.ipack/buffer"
+	"ipack/com.ipack/constant"
+	"ipack/com.ipack/security"
 	"log"
 	"net"
 	"time"

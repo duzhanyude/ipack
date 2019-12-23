@@ -1,8 +1,8 @@
 package socket
 
 import (
-	"capture/com.capture/security"
 	"github.com/axgle/mahonia"
+	"ipack/com.ipack/security"
 	"log"
 	"net"
 	"regexp"

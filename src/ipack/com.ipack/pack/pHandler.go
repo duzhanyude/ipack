@@ -1,13 +1,13 @@
 package pack
 
 import (
-	"capture/com.capture/constant"
-	"capture/com.capture/dispatch"
-	"capture/com.capture/statistic"
 	"fmt"
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
 	"github.com/google/gopacket/pcap"
+	"ipack/com.ipack/constant"
+	"ipack/com.ipack/dispatch"
+	"ipack/com.ipack/statistic"
 	"log"
 	"net"
 	"time"

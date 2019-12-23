@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"capture/com.capture/buffer"
 	"golang.org/x/net/websocket"
+	"ipack/com.ipack/buffer"
 	"log"
 )
 

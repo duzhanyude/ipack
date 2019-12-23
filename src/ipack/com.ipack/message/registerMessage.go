@@ -1,7 +1,7 @@
 package message
 
 import (
-	"capture/com.capture/constant"
+	"ipack/com.ipack/constant"
 )
 
 var mes = *new([]Message)

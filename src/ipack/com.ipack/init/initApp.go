@@ -1,16 +1,16 @@
 package init
 
 import (
-	"capture/com.capture/buffer"
-	"capture/com.capture/conf"
-	"capture/com.capture/db/leveldb"
-	"capture/com.capture/dispatch"
-	"capture/com.capture/filter"
-	"capture/com.capture/log"
-	"capture/com.capture/message"
-	"capture/com.capture/pack"
-	"capture/com.capture/service/http"
 	"fmt"
+	"ipack/com.ipack/buffer"
+	"ipack/com.ipack/conf"
+	"ipack/com.ipack/db/leveldb"
+	"ipack/com.ipack/dispatch"
+	"ipack/com.ipack/filter"
+	"ipack/com.ipack/log"
+	"ipack/com.ipack/message"
+	"ipack/com.ipack/pack"
+	"ipack/com.ipack/service/http"
 )
 
 func init() {

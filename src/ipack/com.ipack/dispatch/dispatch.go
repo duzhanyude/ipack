@@ -1,12 +1,12 @@
 package dispatch
 
 import (
-	"capture/com.capture/buffer"
-	"capture/com.capture/conf"
-	"capture/com.capture/constant"
-	"capture/com.capture/filter"
-	"capture/com.capture/message"
-	"capture/com.capture/statistic"
+	"ipack/com.ipack/buffer"
+	"ipack/com.ipack/conf"
+	"ipack/com.ipack/constant"
+	"ipack/com.ipack/filter"
+	"ipack/com.ipack/message"
+	"ipack/com.ipack/statistic"
 	"os"
 	"sync"
 	"time"
@@ -43,19 +43,15 @@ func (d *Dispatch) HandlerPackage(packDefine constant.PackDefine) {
 }
 
 func saveIPInfo(ip string, content string) {
-
-	//data := string(reg.Find([]byte(content)))
-	//if data != "" {
 	mutex.Lock()
-	if content != "" {
+	if content != "" && len(content) > 0 {
 		c, _ := buffer.PackageIP.Load(ip)
-		if c == "" {
+		if c == "" || c == nil {
 			buffer.PackageList.PushBack(ip)
 		}
 		buffer.PackageIP.Store(ip, content)
 	}
 	mutex.Unlock()
-	//}
 }
 func (d *Dispatch) WriteFile() {
 	Dis = *d

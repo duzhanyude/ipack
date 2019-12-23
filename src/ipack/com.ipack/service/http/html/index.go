@@ -1,7 +1,7 @@
 package html
 
 import (
-	"capture/com.capture/statistic"
+	"ipack/com.ipack/statistic"
 	"strconv"
 	"strings"
 )
@@ -43,6 +43,7 @@ func IndexHtml() string {
 	<nav>
 	<a href="index">首页</a> |
 	<a href="timeData">实时数据</a> |
+	<a href="status">连接统计</a> |
 	<a href="sys">系统</a> |
 	</nav>
 	
