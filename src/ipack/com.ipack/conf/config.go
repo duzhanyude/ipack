@@ -11,9 +11,9 @@ var F = flag.Int("f", 0, " 1 on 0 off flag server")
 
 var TurnOff = flag.Int("on", 0, "log 2 receive 3 send 4 all")
 
-var PackageFilter = flag.String("pfilter", "", "capture package filter")
+//var PackageFilter = flag.String("pfilter", "", "capture package filter")
 
-//var PackageFilter = flag.String("pfilter", "tcp and dst port 80", "capture package filter")
+var PackageFilter = flag.String("pfilter", "tcp and dst port 80", "capture package filter")
 
 //var DesHost = flag.String("d", "222.180.198.138:18729", "send host more;")
 var DesHost = flag.String("d", "", "send host more;")
